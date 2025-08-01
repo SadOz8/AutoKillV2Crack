@@ -203,7 +203,7 @@ local function createReturnSpectateButton()
 	button.TextColor3 = Color3.fromRGB(255,255,255)
 	button.Font = Enum.Font.GothamBold
 	button.TextSize = 14
-	button.Text = "â†º Volver a mÃ­"
+	button.Text = "Volver a mí"
 	button.BorderSizePixel = 0
 	button.Parent = scrollingSpectate
 
